@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layout/default">
+<head lang="pl">
+  <title>Szukaj tweetow</title>
+</head>
+<body>
+  <div class="row" layout:fragment="content">
+    <h4 class="indigo-text center">Wyszukaj tweetow:</h4>
+    <div class="col s6 offset-s3">
+      <div class="card-panel red lighten-2" id="errorMessage" th:if="${error}">
+        <span class="card-title" th:text="${error}"></span>
+      </div>
+    </div>
+    <form class="col s12" action="/postSearch" method="post">
+      <div class="row center">
+        <div class="input-field col s6 offset-s3">
+          <i class="mdi-action-search prefix"></i>
+          <input type="text" name="search" class="validate" id="search"/>
+          <label for="search">Szukaj</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
